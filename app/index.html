@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" ng-app="skm">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>SKM Search</title>
+    <link rel='stylesheet' href='css/bootstrap-darkblue.css'> 
+    <script src="lib/modernizr.custom.21075.js"></script>
+     
+    <script>
+    Modernizr.load({
+        test: Modernizr.mq("only all"),
+        nope: "http://stage-static.wellmanage.com/bootstrap/js/vendor/respond.src.js"
+    });
+    </script>
+</head>
+
+<body ng-controller="mainSearchController" data-spy="scroll" data-target=".bs-docs-sidebar">
+
+       <header id="header">
+        <p class="app-title pull-left"><a href="index.html">Strategic Knowledge Management</a></p>
+       </header>
+
+    <nav id="nav" class="navbar" role="navigation">
+        <div class="navbar-inner">
+            <div class="container">
+                <button class="btn btn-navbar collapsed " data-target=".nav-collapse" data-toggle="collapse" type="button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                    
+                </button>
+                <div class="current-page"></div>
+                <div class="nav-collapse collapse" id="nav-main">
+                    <ul class="nav">
+                        <li class=""><a href="#/approchSearch">Approaches</a></li>
+                        <li class=""><a href="#/productSearch">Products</a></li>
+                        <li class=""><a href="#/documentSearch">Documents</a></li>
+                        <li class=""><a href="#/vehicleSearch">Vehicles</a></li>
+                        <li class=""><a href="#/emailSearch">Emails</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container" >
+        <div class="row">
+           <div class="span9">
+              <div>Search</div>
+                <form class="form-inline">
+                    <input type="text" class="autocomplete" data-provide="typeahead" ng-model='query'>
+                    <img src="img/search_icon.gif"  ng-click='search()'/>
+                </form>
+           </div>       
+        </div>
+    </div>    
+
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <button class="pull-right" ng-click="cancel()">X</button>
+            <div class="modal-title">Im a modal!</div>
+
+        </div>
+        <div class="modal-body">
+            <div class="btn-group-vertical">
+               <div ng-repeat="facetItem in resultData.facets">
+                   <div class="btn-group btn btn-default">
+                          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                              {{facetItem.facet_header}}
+                               <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu" >
+                              <div ng-repeat="facetElement in  facetItem.facet_elements">
+                              <li ng-repeat="(key,val) in  facetElement">
+                                   <a href='#/{{val}}'>{{key}}</a>
+                              </li> 
+                              </div>                   
+                          </ul>
+                  </div>
+               </div>
+              </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            
+        </div>
+    </script>
+
+    
+
+<!-- Start : main content div showing facet + table  -->
+<div ng-hide="emptyPage">
+
+
+    <div class="container">
+          <!-- Start : Filters  -->
+            <button class="btn btn-navbar"  type="button" ng-click="toggleFilterVisibility()">
+                 Filter  <span ng-show="showFilters" > << </span> <span ng-hide="showFilters"> >> </span>  
+            </button>  
+          <!-- End : Filters  -->
+
+
+    <!-- Start : result table  -->
+    <div class=" table-responsive">
+       <table class="table">
+            <thead>
+                <tr>
+                    <th> 
+                        <b>Threads</b>
+                    </th> 
+                    <th> 
+                         <b>Author</b>
+                    </th> 
+                     <th> 
+                        <b>Date</b>
+                    </th> 
+                     <th> 
+                        <b>Title</b>
+                    </th> 
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat = "result in resultData.displayResult" >
+                    <td>
+                      <span ng-click="toggleRowVisibility(result.res_id)">
+                        <img src="img/plus.gif" ng-hide="rowVisibilityIndexes[result.res_id]"/>
+                        <img src="img/minus.gif" ng-show="rowVisibilityIndexes[result.res_id]"/>
+                      </span>
+                     {{result.res_thread}}
+                    </td>
+
+                    <td>
+                       {{result.res_author}}
+                       <div  ng-show="rowVisibilityIndexes[result.res_id]">
+
+                         <div ng-repeat="indivisualEmail in result.res_email_list ">
+                         
+                            <div class="table-bordered">{{indivisualEmail.author}} </div>
+                          
+                         </div>
+                       </div>
+                    </td>
+
+                    <td>
+                     {{result.res_date}}
+                       <div  ng-show="rowVisibilityIndexes[result.res_id]">
+
+                         <div  ng-repeat="indivisualEmail in result.res_email_list ">
+                           <div class="table-bordered">{{indivisualEmail.date}} </div>
+                          </div>
+                       </div>
+                    </td> 
+
+                    <td>
+                       {{result.res_title}}
+                        <div  ng-show="rowVisibilityIndexes[result.res_id]">
+                          <div  ng-repeat="indivisualEmail in result.res_email_list ">
+                              <div class="table-bordered">
+                                 <a target="_blank" href='{{indivisualEmail.link}}'>{{indivisualEmail.title}}</a> 
+                              </div>
+                           </div> 
+                        </div>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>     
+    <!-- End : result table  -->
+
+    <!-- End : main content div showing facet + table  -->
+</div>
+        
+
+      
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-route.js"></script>
+  <script src="lib/bootstrap.js"></script>
+  <script src="lib/angular/ui-bootstrap-tpls-0.9.0.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/backendURLs.js"></script>
+  <script src="js/controllers/MainSearchController.js"></script>
+  <script src="js/controllers/ModalController.js"></script>
+  <script src="js/services/EmailSearchService.js"></script>
+
+</body>
+</html>
