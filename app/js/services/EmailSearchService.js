@@ -2,7 +2,7 @@
 	'use strict';
    skm.services.service('emailSearchService',['$http','$q','backendURLs',function($http,$q,backendURLs){
 
-	     this.search = function(){
+	     this.search = function(query){
 				var deferred = $q.defer();
 				$http({
 							method : 'GET',

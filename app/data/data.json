@@ -1,0 +1,43 @@
+{
+ "Coupons" : [
+		{
+			"CouponId" : "1",
+			"CouponRank" : "5", 
+			"CouponSite"	: "www.flipkart.com",
+			"DiscountPc" : "10",
+			"IssueDate" : "21/11/2014",
+			"ValidTill" : "03/03/2015", 
+			"Text" : "",
+			"ProdId" : "1101234",
+			"ExpiryDate" : "null",
+			"ExpireReason" : "null",
+			"CouponCategory" : "Gold"
+		},
+		{
+			"CouponId" : "2",
+			"CouponRank" : "10", 
+			"CouponSite"	: "www.junglee.com",
+			"DiscountPc" : "20",
+			"IssueDate" : "21/12/2014",
+			"ValidTill" : "03/04/2015", 
+			"Text" : "",
+			"ProdId" : "123234",
+			"ExpiryDate" : "null",
+			"ExpireReason" : "null",
+			"CouponCategory" : "Silver"
+		},
+		{
+			"CouponId" : "3",
+			"CouponRank" : "7", 
+			"CouponSite"	: "www.snapdeal.com",
+			"DiscountPc" : "30",
+			"IssueDate" : "31/12/2014",
+			"ValidTill" : "03/06/2015", 
+			"Text" : "",
+			"ProdId" : "120986",
+			"ExpiryDate" : "null",
+			"ExpireReason" : "null",
+			"CouponCategory" : "Pletinum"
+		}
+   ]
+}

@@ -12,7 +12,7 @@
     <link href="css/coustom-app.css" rel="stylesheet" type="text/css">
 </head>
 
-<body style="background-color: white !important;opacity: 1 !important;filter: alpha(opacity=1) !important;">
+<body style="background-color: white !important;opacity: 1 !important;filter: alpha(opacity=1) !important;" ng-controller="mainSearchController">
     <div class="background-cover " id="homepage-header-block">
         <div class="container">
 
@@ -29,9 +29,9 @@
 
             <div id="homepage-search" class="row">
                 <div class="col-16 col-push-4">
-                    <form id="searchForm" method="get" action="http://www.coupondunia.in/search/">
+                    <form id="searchForm" method="get">
                         <input autocomplete="off" name="q" id="query" class="form-control" type="text" placeholder="Search for your favourite merchant, product or category" />
-                        <button class="image-button"><img height="30" width="30" src="http://www.coupondunia.in/theme/Elegance/img/ic_menu_search_default.png">
+                        <button class="image-button" ng-click="search()"><img height="30" width="30" src="http://www.coupondunia.in/theme/Elegance/img/ic_menu_search_default.png">
                         </button>
                     </form>
                     <ul id="results" style="display:none;"></ul>
@@ -119,182 +119,26 @@
                     <div id="tabcontents">
                         <div class="tabcontent hottest-tab" id="hottest-coupons-homepage">
                             <div class="row">
-
-
-                                <div class="col-6" id="c100127">
-                                    <div class="offer-small offer">
-                                        <div class="vendor-image" style="background-color:#ffffff">
-                                            <a href="http://www.coupondunia.in/ebay?src=featured#c100127"><img src="http://cdn01.coupondunia.in/sitespecific/media/generated/merchantlogos/logo_5e29580_97.jpg?v=1413531812" alt="eBay">
-                                            </a>
+                                <div class="row">
+                                       <div class="col-6" id="c100127" ng-repeat="coupan in resultData">
+                                            <div class="offer-small offer">
+                                                <div class="vendor-image" style="background-color:#ffffff">
+                                                    <a href="http://{{coupan.CouponSite}}"><img src="http://cdn01.coupondunia.in/sitespecific/media/generated/merchantlogos/logo_5e29580_97.jpg?v=1413531812" alt="eBay"></a>
+                                                </div>
+                                                <div id="c100127" class="offer-title ">
+                                                    <a href="#">{{coupan.CouponCategory}}</a>
+                                                </div>
+                                                <div class="offer-getcode">
+                                                    <div id="c100127" href="http://www.coupondunia.in/load/100127/" class="btn btn-cd btn-coupon coupon-click" data-type="online" data-clipboard-text="COUPOND100" data-couponid="100127" data-coupontype="MultipleUseCoupon" data-clickarea="HomeButton" data-websitename="eBay" data-websiteid="97" data-code="COUPOND100" data-url="http://www.coupondunia.in/load/100127/">{{coupan.CouponRank}}</div>
+                                                 </div>
+                                                
+                                                <div class="vendor-offer-count trim-content">
+                                                    <a href="http://www.coupondunia.in/ebay">See all 32 eBay offers</a>
+                                                </div> 
+                                             </div>
                                         </div>
-                                        <div id="c100127" class="offer-title ">
-                                            <a href="http://www.coupondunia.in/ebay?src=featured#c100127">Rs. 100 Off on Rs. 200+ (New Users Only)</a>
+                                   </div>
 
-                                        </div>
-                                        <div class="offer-getcode">
-                                            <div id="c100127" href="http://www.coupondunia.in/load/100127/" class="btn btn-cd btn-coupon coupon-click" data-type="online" data-clipboard-text="COUPOND100" data-couponid="100127" data-coupontype="MultipleUseCoupon" data-clickarea="HomeButton" data-websitename="eBay" data-websiteid="97" data-code="COUPOND100" data-url="http://www.coupondunia.in/load/100127/">GET CODE</div>
-                                        </div>
-
-                                        <div class="vendor-offer-count trim-content">
-                                            <a href="http://www.coupondunia.in/ebay">See all 31 eBay offers</a>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-                                <div class="col-6" id="c100108">
-                                    <div class="offer-small offer">
-                                        <div class="vendor-image" style="background-color:#ffffff">
-                                            <a href="http://www.coupondunia.in/bigrock?src=featured#c100108"><img src="http://cdn01.coupondunia.in/sitespecific/media/generated/merchantlogos/logo_3a55e1a_296.jpg?v=1413531813" alt="BigRock">
-                                            </a>
-                                        </div>
-                                        <div id="c100108" class="offer-title ">
-                                            <a href="http://www.coupondunia.in/bigrock?src=featured#c100108">35% Off on Shared Hosting + 10% Off on Domains</a>
-
-                                        </div>
-                                        <div class="offer-getcode">
-                                            <div id="c100108" href="http://www.coupondunia.in/load/100108/" class="btn btn-cd btn-coupon coupon-click" data-type="online" data-clipboard-text="FEB35" data-couponid="100108" data-coupontype="MultipleUseCoupon" data-clickarea="HomeButton" data-websitename="BigRock" data-websiteid="296" data-code="FEB35" data-url="http://www.coupondunia.in/load/100108/">GET CODE</div>
-                                        </div>
-
-                                        <div class="vendor-offer-count trim-content">
-                                            <a href="http://www.coupondunia.in/bigrock">See all 9 BigRock offers</a>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-                                <div class="col-6" id="c100202">
-                                    <div class="offer-small offer">
-                                        <div class="vendor-image" style="background-color:#ffffff">
-                                            <a href="http://www.coupondunia.in/amazon?src=featured#c100202"><img src="http://cdn01.coupondunia.in/sitespecific/media/generated/merchantlogos/logo_2d0d480_289.jpg?v=1413531812" alt="Amazon">
-                                            </a>
-                                        </div>
-                                        <div id="c100202" class="offer-title ">
-                                            <a href="http://www.coupondunia.in/amazon?src=featured#c100202">Flat 30% Off on Apparel </a>
-
-                                        </div>
-                                        <div class="offer-getcode">
-                                            <div id="c100202" href="http://www.coupondunia.in/load/100202/" class="btn btn-cd btn-onetime signin-modal-trigger" data-type="online" data-clipboard-text="." data-couponid="100202" data-coupontype="OneTimeUseCoupon" data-clickarea="HomeButton" data-websitename="Amazon" data-websiteid="289" data-code="" data-url="http://www.coupondunia.in/load/100202/">SIGN IN TO SEE CODE</div>
-                                        </div>
-
-                                        <div class="vendor-offer-count trim-content">
-                                            <a href="http://www.coupondunia.in/amazon">See all 28 Amazon offers</a>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-                                <div class="col-6" id="c100001">
-                                    <div class="offer-small offer">
-                                        <div class="vendor-image" style="background-color:#f85e14">
-                                            <a href="http://www.coupondunia.in/foodpanda?src=featured#c100001"><img src="http://cdn01.coupondunia.in/sitespecific/media/generated/merchantlogos/logo_7cc0d32_477.jpg?v=1416212583" alt="foodpanda">
-                                            </a>
-                                        </div>
-                                        <div id="c100001" class="offer-title ">
-                                            <a href="http://www.coupondunia.in/foodpanda?src=featured#c100001">Rs. 100 Off on Rs. 300 (All Users)</a>
-
-                                        </div>
-                                        <div class="offer-getcode">
-                                            <div id="c100001" href="http://www.coupondunia.in/load/100001/" class="btn btn-cd btn-coupon coupon-click" data-type="online" data-clipboard-text="CRICBITES" data-couponid="100001" data-coupontype="MultipleUseCoupon" data-clickarea="HomeButton" data-websitename="foodpanda" data-websiteid="477" data-code="CRICBITES" data-url="http://www.coupondunia.in/load/100001/">GET CODE</div>
-                                        </div>
-
-                                        <div class="vendor-offer-count trim-content">
-                                            <a href="http://www.coupondunia.in/foodpanda">See all 3 foodpanda offers</a>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-                                <div class="col-6" id="c100203">
-                                    <div class="offer-small offer">
-                                        <div class="vendor-image" style="background-color:#ffffff">
-                                            <a href="http://www.coupondunia.in/jabong?src=featured#c100203"><img src="http://cdn01.coupondunia.in/sitespecific/media/generated/merchantlogos/logo_2741ba5_395.jpg?v=1413531813" alt="Jabong">
-                                            </a>
-                                        </div>
-                                        <div id="c100203" class="offer-title ">
-                                            <a href="http://www.coupondunia.in/jabong?src=featured#c100203">Happy Hours Sale: Minimum 50% Off on Popular Br...</a>
-                                            <div class="offer-ends trim-content">Ends: 10 minutes</div>
-
-                                        </div>
-                                        <div class="offer-getcode">
-                                            <div id="c100203" class="btn btn-cd btn-deal coupon-click " data-type="online" data-couponid="100203" data-coupontype="Deal" data-clickarea="HomeButton" data-websitename="Jabong" data-websiteid="395" data-code="" data-url="http://www.coupondunia.in/load/100203/">Activate DEAL</div>
-                                        </div>
-                                        <div class="vendor-offer-count trim-content">
-                                            <a href="http://www.coupondunia.in/jabong">See all 20 Jabong offers</a>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-                                <div class="col-6" id="c99869">
-                                    <div class="offer-small offer">
-                                        <div class="vendor-image" style="background-color:#ffffff">
-                                            <a href="http://www.coupondunia.in/firstcry?src=featured#c99869"><img src="http://cdn01.coupondunia.in/sitespecific/media/generated/merchantlogos/logo_b66be5e_161.jpg?v=1413531812" alt="FirstCry">
-                                            </a>
-                                        </div>
-                                        <div id="c99869" class="offer-title ">
-                                            <a href="http://www.coupondunia.in/firstcry?src=featured#c99869">Flat 50% Off + 50% Cashback on Handpicked Products</a>
-
-                                        </div>
-                                        <div class="offer-getcode">
-                                            <div id="c99869" href="http://www.coupondunia.in/load/99869/" class="btn btn-cd btn-coupon coupon-click" data-type="online" data-clipboard-text="FC5050" data-couponid="99869" data-coupontype="MultipleUseCoupon" data-clickarea="HomeButton" data-websitename="FirstCry" data-websiteid="161" data-code="FC5050" data-url="http://www.coupondunia.in/load/99869/">GET CODE</div>
-                                        </div>
-
-                                        <div class="vendor-offer-count trim-content">
-                                            <a href="http://www.coupondunia.in/firstcry">See all 31 FirstCry offers</a>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-                                <div class="col-6" id="c99265">
-                                    <div class="offer-small offer">
-                                        <div class="vendor-image" style="background-color:#1b2433">
-                                            <a href="http://www.coupondunia.in/flipkart?src=featured#c99265"><img src="http://cdn01.coupondunia.in/sitespecific/media/generated/merchantlogos/logo_5972793_1.jpg?v=1416212070" alt="Flipkart">
-                                            </a>
-                                        </div>
-                                        <div id="c99265" class="offer-title ">
-                                            <a href="http://www.coupondunia.in/flipkart?src=featured#c99265">Fashion Accessories Store: Upto 70% Off on Fash...</a>
-
-                                        </div>
-                                        <div class="offer-getcode">
-                                            <div id="c99265" class="btn btn-cd btn-deal coupon-click " data-type="online" data-couponid="99265" data-coupontype="Deal" data-clickarea="HomeButton" data-websitename="Flipkart" data-websiteid="1" data-code="" data-url="http://www.coupondunia.in/load/99265/">Activate DEAL</div>
-                                        </div>
-                                        <div class="vendor-offer-count trim-content">
-                                            <a href="http://www.coupondunia.in/flipkart">See all 28 Flipkart offers</a>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-
-                                <div class="col-6" id="c99392">
-                                    <div class="offer-small offer">
-                                        <div class="vendor-image" style="background-color:#ffffff">
-                                            <a href="http://www.coupondunia.in/fabfurnish?src=featured#c99392"><img src="http://cdn01.coupondunia.in/sitespecific/media/generated/merchantlogos/logo_2dcc6fe_456.jpg?v=1416212070" alt="FabFurnish">
-                                            </a>
-                                        </div>
-                                        <div id="c99392" class="offer-title ">
-                                            <a href="http://www.coupondunia.in/fabfurnish?src=featured#c99392">Exlcusive: Flat 20% Off Sitewide on Min. Purcha...</a>
-
-                                        </div>
-                                        <div class="offer-getcode">
-                                            <div id="c99392" href="http://www.coupondunia.in/load/99392/" class="btn btn-cd btn-coupon coupon-click" data-type="online" data-clipboard-text="FABCD20" data-couponid="99392" data-coupontype="MultipleUseCoupon" data-clickarea="HomeButton" data-websitename="FabFurnish" data-websiteid="456" data-code="FABCD20" data-url="http://www.coupondunia.in/load/99392/">GET CODE</div>
-                                        </div>
-
-                                        <div class="vendor-offer-count trim-content">
-                                            <a href="http://www.coupondunia.in/fabfurnish">See all 14 FabFurnish offers</a>
-                                        </div>
-
-
-                                    </div>
-                                </div>
                             </div>
                             
                         </div>
