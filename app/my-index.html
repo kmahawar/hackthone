@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>ABC</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/coustom-app.css" rel="stylesheet" type="text/css">
     <style>
     html,body,h1,h2{
     	margin: 0px;
@@ -35,7 +36,7 @@
 					<h1>ABC</h1>
 				</div>
 				<div class="col-md-6">
-					<button class="btn btn-primary pull-right">SIGN IN</button>
+					<a href="/login.html" class="btn btn-primary pull-right">SIGN IN</a>
 				</div>
 			</div>
 			<div class="row">
@@ -81,7 +82,7 @@
 		   </table>
 
 		   <div class="row">
-		   	   <div class="col-md-4" id="c100127" ng-repeat="coupan in resultData">
+		   	   <div class="col-md-3" id="c100127" ng-repeat="coupan in resultData">
 				    <div class="offer-small offer">
 				        <div class="vendor-image" style="background-color:#ffffff">
 				            <a href="{{coupan.CouponSite}}"><img src="http://cdn01.coupondunia.in/sitespecific/media/generated/merchantlogos/logo_5e29580_97.jpg?v=1413531812" alt="eBay"></a>

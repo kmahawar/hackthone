@@ -38,6 +38,19 @@
 			"ExpiryDate" : "null",
 			"ExpireReason" : "null",
 			"CouponCategory" : "Pletinum"
+		},
+		{
+			"CouponId" : "4",
+			"CouponRank" : "5", 
+			"CouponSite"	: "www.snapdeal.com",
+			"DiscountPc" : "30",
+			"IssueDate" : "31/12/2014",
+			"ValidTill" : "03/06/2015", 
+			"Text" : "",
+			"ProdId" : "120986",
+			"ExpiryDate" : "null",
+			"ExpireReason" : "null",
+			"CouponCategory" : "Pletinum"
 		}
    ]
 }
