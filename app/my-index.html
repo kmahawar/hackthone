@@ -2,16 +2,29 @@
 <html lang="en" ng-app="skm">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
 	<title>ABC</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/coustom-app.css" rel="stylesheet" type="text/css">
     <style>
+
+    @media screen and (max-width: 700px) {
+    	.header{
+	     	height: 100px !important;
+	     }
+	     .header>.container{
+	     	padding-top: 10px !important;
+	     }
+
+    }
+
     html,body,h1,h2{
     	margin: 0px;
     	padding: 0px;
     }
+
      .header{
-     	height: 200px;
+     	height: 150px;
      	background-image: url("img/banner-overlay-black.png"),url("img/banner-bg.jpg");
      	color: white;
      	font-family: proxima;
@@ -32,10 +45,10 @@
 	<div class="header">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-6 col-xs-6">
 					<h1>ABC</h1>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-6 col-xs-6">
 					<a href="/login.html" class="btn btn-primary pull-right">SIGN IN</a>
 				</div>
 			</div>
@@ -58,47 +71,59 @@
 		<div class="container">
 			<h1>Content goes here</h1>
 			<hr>
-		   <table class="table table-striped table-bordered table-hover">
-		   	<thead>
-		   		<tr>
-		   			<th>CouponSite</th>
-		   			<th>DiscountPc</th>
-		   			<th>IssueDate</th>
-		   			<th>ValidTill</th>
-		   			<th>CouponRank</th>
-		   			<th>CouponCategory</th>
-		   		</tr>
-		   	</thead>
-		   	<tbody>
-		   		<tr ng-repeat="coupan in resultData">
-		   			<td>{{coupan.CouponSite}}</td>
-		   			<td>{{coupan.DiscountPc}}</td>
-		   			<td>{{coupan.IssueDate}}</td>
-		   			<td>{{coupan.ValidTill}}</td>
-		   			<td>{{coupan.CouponRank}}</td>
-		   			<td>{{coupan.CouponCategory}}</td>
-		   		</tr>
-		   	</tbody>
-		   </table>
-
+		  <!--  <table class="table table-striped table-bordered table-hover">
+		  	<thead>
+		  		<tr>
+		  			<th>CouponSite</th>
+		  			<th>DiscountPc</th>
+		  			<th>IssueDate</th>
+		  			<th>ValidTill</th>
+		  			<th>CouponRank</th>
+		  			<th>CouponCategory</th>
+		  		</tr>
+		  	</thead>
+		  	<tbody>
+		  		<tr ng-repeat="coupan in resultData">
+		  			<td>{{coupan.CouponSite}}</td>
+		  			<td>{{coupan.DiscountPc}}</td>
+		  			<td>{{coupan.IssueDate}}</td>
+		  			<td>{{coupan.ValidTill}}</td>
+		  			<td>{{coupan.CouponRank}}</td>
+		  			<td>{{coupan.CouponCategory}}</td>
+		  		</tr>
+		  	</tbody>
+		  </table>
+		   -->
 		   <div class="row">
-		   	   <div class="col-md-3" id="c100127" ng-repeat="coupan in resultData">
-				    <div class="offer-small offer">
-				        <div class="vendor-image" style="background-color:#ffffff">
-				            <a href="{{coupan.CouponSite}}"><img src="http://cdn01.coupondunia.in/sitespecific/media/generated/merchantlogos/logo_5e29580_97.jpg?v=1413531812" alt="eBay"></a>
-				        </div>
-				        <div id="c100127" class="offer-title ">
-				            <a href="#">{{coupan.CouponCategory}}</a>
-				        </div>
-			            <div class="offer-getcode">
-							<div id="c100127" href="http://www.coupondunia.in/load/100127/" class="btn btn-cd btn-coupon coupon-click" data-type="online" data-clipboard-text="COUPOND100" data-couponid="100127" data-coupontype="MultipleUseCoupon" data-clickarea="HomeButton" data-websitename="eBay" data-websiteid="97" data-code="COUPOND100" data-url="http://www.coupondunia.in/load/100127/">{{coupan.CouponRank}}</div>
-			             </div>
-			            
-		                <div class="vendor-offer-count trim-content">
-		                	<a href="http://www.coupondunia.in/ebay">See all 32 eBay offers</a>
-		                </div> 
-				     </div>
-				</div>
+		   	   <div class="col-md-2">
+		   	   	  <ul>
+		   	   	  	<li>kamlesh</li>
+		   	   	  	<li>kamlesh</li>
+		   	   	  	<li>kamlesh</li>
+		   	   	  	<li>kamlesh</li>
+		   	   	  </ul>
+		   	   </div>
+		   	   <div class="col-md-10" style="border-left:2px solid #ccc">
+		   	   	  <div class="row">
+		   	   	  	 <div class="col-md-3" id="c100127" ng-repeat="coupan in resultData">
+					    <div class="offer-small offer">
+					        <div class="vendor-image" style="background-color:#ffffff">
+					            <a href="{{coupan.CouponSite}}"><img src="http://cdn01.coupondunia.in/sitespecific/media/generated/merchantlogos/logo_5e29580_97.jpg?v=1413531812" alt="eBay"></a>
+					        </div>
+					        <div id="c100127" class="offer-title ">
+					            <a href="#">{{coupan.CouponCategory}}</a>
+					        </div>
+				            <div class="offer-getcode">
+								<div id="c100127" href="http://www.coupondunia.in/load/100127/" class="btn btn-cd btn-coupon coupon-click" data-type="online" data-clipboard-text="COUPOND100" data-couponid="100127" data-coupontype="MultipleUseCoupon" data-clickarea="HomeButton" data-websitename="eBay" data-websiteid="97" data-code="COUPOND100" data-url="http://www.coupondunia.in/load/100127/">{{coupan.CouponRank}}</div>
+				             </div>
+				            
+			                <div class="vendor-offer-count trim-content">
+			                	<a href="http://www.coupondunia.in/ebay">See all 32 eBay offers</a>
+			                </div> 
+					     </div>
+					</div>
+		   	   	  </div>
+		   	   </div>
 		   </div>
 		</div>
 	</div>
