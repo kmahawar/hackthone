@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>login page</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+	<h1>Register Now </h1>
+	<hr>
+	<form class="form">
+		<div class="row">
+			  <div class="form-group col-md-6 col-xs-6">
+			    <label for="firstName">First Name</label>
+			    <input type="text" class="form-control" id="firstName" placeholder="Jane ">
+			  </div>
+			  <div class="form-group col-md-6 col-xs-6">
+			    <label for="lastName">Last Name</label>
+			    <input type="text" class="form-control" id="lastName" placeholder="Doe">
+			  </div>
+		</div>
+		<div class="row">
+			  <div class="form-group col-md-6 col-xs-6">
+			    <label for="sex">Sex</label>
+			    <div class="form-control">
+			    	<div class="row">
+			    		<div class="col-md-12 col-xs-12">
+				    		<input type="radio" name="sex"> Male<input type="radio" name="sex"> Female
+				    	</div>
+			    	</div>
+			    </div>
+			  </div>
+			  <div class="form-group col-md-6 col-xs-6">
+			    <label for="emailId">Email</label>
+			    <input type="email" class="form-control" id="emailId" placeholder="jane.doe@example.com">
+			  </div>
+		</div>
+		<div class="row">
+			  <div class="form-group col-md-6 col-xs-6">
+			    <label for="address">Address</label>
+			    <textarea class="form-control" rows="3" id="address"></textarea>
+			  </div>
+			  <div class="form-group col-md-6 col-xs-6">
+			    <label for="mobileNumber">Mobile No.</label>
+			    <input type="text" class="form-control" id="mobileNumber" placeholder="mob no.">
+			  </div>
+		</div>
+		<a href="/login.html" type="submit" class="btn btn-primary">Register</a>
+	</form>
+</div>	
+</body>
+</html>

@@ -1,6 +1,6 @@
 (function(){
 'use strict';
-skm.controller('mainSearchController',function($scope , $modal, emailSearchService ){
+skm.controller('mainSearchController',function($scope ,emailSearchService ){
 
 
 	$scope.searchFor="email";

@@ -6,8 +6,7 @@ var skm = angular.module('skm', [
   'skm.filters',
   'skm.services',
   'skm.directives',
-  'skm.controllers',
-  'ui.bootstrap'
+  'skm.controllers'
 ]);
 
 skm.controller = angular.module('skm.controllers',[]).controller;

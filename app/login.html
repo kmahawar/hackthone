@@ -21,17 +21,17 @@
 		<div class="col-md-6 col-xs-10 col-sm-6 col-md-offset-3 col-xs-offset-1 col-sm-offset-3 box">
 			<h2 align="center">Login</h2>
 			<hr>
-			<form class="form-horizontal">
+			<form class="form-horizontal" action="submit">
 				  <div class="form-group">
-				    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+				    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 				    <div class="col-sm-10">
-				      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+				      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
 				    </div>
 				  </div>
 				  <div class="form-group">
-				    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+				    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
 				    <div class="col-sm-10">
-				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
 				    </div>
 				  </div>
 				  <div class="form-group">
@@ -40,12 +40,14 @@
 				        <label>
 				          <input type="checkbox"> Remember me
 				        </label>
+				        <a href="#" class="pull-right"><i>forgot your password?</i></a>
 				      </div>
 				    </div>
 				  </div>
 				  <div class="form-group">
 				    <div class="col-sm-offset-2 col-sm-10">
-				    	<a href="/my-index.html" type="submit" class="btn btn-default">Sign in</a>
+				    	<a href="/my-index.html" type="submit" class="btn btn-primary">Sign in</a>
+				    	<a href="/registerUser.html" class="btn btn-primary pull-right">Register now</a>
 				    </div>
 				  </div>
 				</form>
